@@ -1,0 +1,17 @@
+.Header {
+    padding: 18px 0 25px;
+}
+
+.header__logo {
+    width: 114px;
+}
+
+@media screen and (min-width: 1200px) {
+    .Header {
+        padding: 18px 0 43px;
+    }
+
+    .header__logo {
+        width: auto;
+    }
+}

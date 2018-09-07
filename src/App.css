@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url(./assets/fonts/proxima_nova_light.woff) format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./assets/fonts/proxima_nova_regular.woff) format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Semibold';
+  src: url(./assets/fonts/proxima_nova_semibold.woff) format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url(./assets/fonts/gotham_medium.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+.App {
+  padding: 0 15px;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.h1 {
+  font-family: 'Proxima Nova Semibold', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.h2 {
+  margin-top: 11px;
+  font-size: 16px;
+  color: #ff408e;
+}
+
+.h3 {
+  font-size: 20px;
+  margin: 40px 0 20px;
+}
+
+.body {
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  padding-bottom: 100px;
+}
+
+.layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.splitter {
+  height: 1px;
+  margin: 20px 0;
+  background-color: #e6e6e6;
+}
+
+.text-primary {
+  color: #ff408e;
+}
+
+.link {
+  font-size: 18px;
+  text-decoration: underline;
+  color: #000000;
+  opacity: 0.4;
+}
+
+.button-primary {
+  height: 50px;
+  background-color: #ff458f;
+  font-family: "Proxima Nova Light", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    padding: 0;
+    text-align: left;
+  }
+
+  .body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 400px 70px 700px;
+    grid-template-columns: 400px 70px 700px;
+    -ms-grid-rows: auto auto 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .h2 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .h3 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+}

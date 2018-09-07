@@ -1,0 +1,61 @@
+.field {
+    display: flex;
+    position: relative;
+    height: 50px;
+    box-shadow: 0 0 0 1px #e6e6e6 inset;
+    background: white;
+    font-size: 18px;
+}
+
+.field-focused {
+    box-shadow: 0 0 0 1px rgba(255, 69, 143, 0.6) inset;
+}
+
+.field-error {
+    box-shadow: 0 0 0 2px #fd6464 inset;
+}
+
+.field__placeholder {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    max-width: calc(100% - 30px);
+    margin: 0 -4px;
+    padding: 0 4px;
+    transform: translateY(-50%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: white;
+    color: #9b9b9b;
+}
+
+.field-focused .field__placeholder,
+.field:not(.field-empty) .field__placeholder {
+    top: 0;
+    z-index: 1;
+    font-size: 14px;
+}
+
+.field__input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+}
+
+.field__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.field__error {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    font-size: 12px;
+    color: #ff0000;
+}

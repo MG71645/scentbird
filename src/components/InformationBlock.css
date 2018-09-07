@@ -1,0 +1,27 @@
+.InformationBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.information__text {
+    margin-top: 23px;
+    width: 100%;
+    font-family: "Proxima Nova", sans-serif;
+    line-height: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+    .InformationBlock {
+        -ms-grid-column: 1;
+        grid-column: 1;
+        -ms-grid-row: 3;
+        grid-row: 3;
+        margin-top: 25px;
+    }
+
+    .information__text {
+        order: 1;
+    }
+}

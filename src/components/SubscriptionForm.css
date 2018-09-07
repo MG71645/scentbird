@@ -1,0 +1,277 @@
+.SubscriptionForm {
+
+}
+
+.subscription__radio {
+    display: flex;
+}
+
+.subscription__option {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    font-size: 24px;
+    text-align: center;
+}
+
+.subscription__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60px;
+    height: 80px;
+}
+
+.option-selected .subscription__image:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+    border: 1px solid #979797;
+    border-radius: 50%;
+    background: #ffffff url(../assets/images/option-checked.png) center center no-repeat;
+}
+
+.subscription__title {
+    margin-top: 20px;
+}
+
+.mobile-number__description {
+    display: none;
+}
+
+.address-toggle {
+    cursor: pointer;
+    display: flex;
+    margin-top: 26px;
+}
+
+.address-checkbox {
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+}
+
+.toggle-on .address-checkbox {
+    background-image: url('../assets/images/checkbox-checked.svg');
+}
+
+.address-toggle__text {
+    opacity: .6;
+}
+
+.card {
+    margin: 0 -15px;
+    padding: 20px 15px 30px;
+    border: 1px solid #e6e6e6;
+    background-color: #fafafa;
+}
+
+.card__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.card__safety {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: 'Proxima Nova Light', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #299501;
+    opacity: 0.6;
+}
+
+.card__encryption {
+    margin-left: 10px;
+}
+
+.card__form {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.card__front {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card__field-number {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card__field-month {
+    width: calc(50% - 5px);
+    margin-right: 10px;
+}
+
+.card__field-year {
+    width: calc(50% - 5px);
+}
+
+.card__text {
+    display: none;
+    color: #9b9b9b;
+}
+
+.card__back {
+    flex-shrink: 0;
+    width: 197px;
+    display: flex;
+    align-items: center;
+}
+
+.card__field-code {
+    margin-right: 11px;
+}
+
+.form__buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.back-button {
+    display: none;
+}
+
+.buy-button__text {
+    padding: 0 58px;
+}
+
+.buy-button__icon {
+    display: none;
+    margin-right: 30px;
+}
+
+@media screen and (max-width: 1199px) {
+    .field:not(:last-of-type) {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .SubscriptionForm {
+        -ms-grid-column: 3;
+        grid-column: 3;
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 2;
+        grid-row: 2 / span 2;
+    }
+
+    .fields-grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% + 20px);
+        margin: -10px;
+    }
+
+    .col-4 {
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+    }
+
+    .col-6 {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .col-8 {
+        width: calc(200% / 3 - 20px);
+        margin: 10px;
+    }
+
+    .col-12 {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .mobile-number {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-number__field {
+        width: 50%;
+    }
+
+    .mobile-number__description {
+        width: 50%;
+        text-align: center;
+    }
+
+    .card {
+        margin: 0;
+        padding: 21px 30px 33px;
+    }
+
+    .card__header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card__safety {
+        margin-bottom: 0;
+    }
+
+    .card__form {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .card__front {
+        margin-right: 20px;
+    }
+
+    .card__field-month {
+        width: 141px;
+        margin-right: 20px;
+    }
+
+    .card__field-year {
+        width: 141px;
+        margin-right: 20px;
+    }
+
+    .card__text {
+        display: block;
+    }
+
+    .form__buttons {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .back-button {
+        display: block;
+    }
+
+    .buy-button {
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+    }
+
+    .buy-button__icon {
+        display: block;
+        margin-right: 30px;
+    }
+}
