@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 
 // Components
-import Field from './elements/Field'
-import Toggle from './elements/Toggle'
 import Radio from './elements/Radio'
+import Field from './elements/Field'
+import Select from './elements/Select'
+import Phone from './elements/Phone'
+import Toggle from './elements/Toggle'
 import CardNumber from './elements/CardNumber'
 import CardMonth from './elements/CardMonth'
 import CardYear from './elements/CardYear'
@@ -125,12 +127,12 @@ class SubscriptionForm extends Component {
                         <Field type="text" className="col-6" placeholder="Last name" required/>
                         <Field type="text" className="col-8" placeholder="Street address" required/>
                         <Field type="text" className="col-4" placeholder="Apt/Suite (Optional)"/>
-                        <Field type="text" className="col-4" value="100095"/>
-                        <Field type="text" className="col-4" value="NEW YORK"/>
-                        <Field type="text" className="col-4" value="NEW YORK"/>
-                        <Field type="text" className="col-12" value="UNITED STATES"/>
+                        <Field type="text" className="col-4" placeholder="Postcode" minLength="5" required/>
+                        <Select className="col-4" options={['NEW YORK', 'CALIFORNIA', 'DETROIT']}/>
+                        <Select className="col-4" options={['NEW YORK', 'LOS ANGELES', 'CALABASAS']}/>
+                        <Field type="text" className="col-12" value="UNITED STATES" required/>
                         <div className="mobile-number col-12">
-                            <Field type="phone" className="mobile-number__field" placeholder="Mobile number (Optional)"/>
+                            <Phone className="mobile-number__field" placeholder="Mobile number (Optional)"/>
                             <div className="mobile-number__description">
                                 We may send you special discounts and offers
                             </div>
@@ -150,10 +152,10 @@ class SubscriptionForm extends Component {
                         <div className="fields-grid">
                             <Field type="text" className="col-8" placeholder="Street address" required/>
                             <Field type="text" className="col-4" placeholder="Apt/Suite (Optional)"/>
-                            <Field type="text" className="col-4" value="100095"/>
-                            <Field type="text" className="col-4" value="NEW YORK"/>
-                            <Field type="text" className="col-4" value="NEW YORK"/>
-                            <Field type="text" className="col-12" value="UNITED STATES"/>
+                            <Field type="text" className="col-4" placeholder="Postcode" minLength="5" required/>
+                            <Select className="col-4" options={['NEW YORK', 'CALIFORNIA', 'DETROIT']}/>
+                            <Select className="col-4" options={['NEW YORK', 'LOS ANGELES', 'CALABASAS']}/>
+                            <Field type="text" className="col-12" value="UNITED STATES" required/>
                         </div>
                     </div>
                 : null}
@@ -191,7 +193,7 @@ class SubscriptionForm extends Component {
                 </div>
                 <div className="form__buttons">
                     <button type="button" className="link back-button">Back</button>
-                    <button type="submit" className="button-primary buy-button">
+                    <button type="button" className="button-primary buy-button">
                         <span className="buy-button__text">Buy now</span>
                         <img src={arrowImage} className="buy-button__icon" alt=""/>
                     </button>

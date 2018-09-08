@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import classNames from 'classnames'
-import validator from 'validator'
+import {isValidNumber} from 'libphonenumber-js'
+
+// Components
+import PhoneInput from 'react-phone-number-input/basic-input'
 
 // Styles
 import './Field.css'
@@ -16,15 +19,11 @@ class Field extends Component {
     }
 
     validate = () => {
-        const minLength = this.props.minLength
         let error = ''
 
         if (this.state.value) {
-            if (minLength && (this.state.value.length < minLength)) {
-                error = `Must be at least ${minLength} chars`
-            }
-            if (this.props.type === 'email' && !validator.isEmail(this.state.value)) {
-                error = 'Not a valid email'
+            if (!isValidNumber(this.state.value)) {
+                error = 'Not a valid number'
             }
         } else if (this.props.required) {
             error = 'This field is required'
@@ -42,9 +41,9 @@ class Field extends Component {
         this.validate()
     }
 
-    handleChange = event => {
+    handleChange = value => {
         this.setState({
-            value: event.target.value,
+            value,
             error: ''
         })
     }
@@ -61,8 +60,7 @@ class Field extends Component {
                 {this.props.placeholder ?
                     <label className="field__placeholder">{this.props.placeholder}</label>
                 : null}
-                <input className="field__input"
-                       type={this.props.type}
+                <PhoneInput className="field__input"
                        value={this.state.value}
                        onFocus={this.handleFocus}
                        onBlur={this.handleBlur}

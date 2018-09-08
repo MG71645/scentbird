@@ -1,7 +1,3 @@
-.SubscriptionForm {
-
-}
-
 .subscription__radio {
     display: flex;
 }
@@ -114,15 +110,18 @@
 .card__field-number {
     width: 100%;
     margin-bottom: 20px;
+    background: white;
 }
 
 .card__field-month {
     width: calc(50% - 5px);
     margin-right: 10px;
+    background: white;
 }
 
 .card__field-year {
     width: calc(50% - 5px);
+    background: white;
 }
 
 .card__text {
@@ -139,6 +138,7 @@
 
 .card__field-code {
     margin-right: 11px;
+    background: white;
 }
 
 .form__buttons {

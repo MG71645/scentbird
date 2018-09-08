@@ -3,12 +3,13 @@
     position: relative;
     height: 50px;
     box-shadow: 0 0 0 1px #e6e6e6 inset;
-    background: white;
+    background-color: #fafafa;
     font-size: 18px;
 }
 
 .field-focused {
     box-shadow: 0 0 0 1px rgba(255, 69, 143, 0.6) inset;
+    background-color: white;
 }
 
 .field-error {
@@ -21,14 +22,24 @@
     top: 50%;
     left: 15px;
     max-width: calc(100% - 30px);
-    margin: 0 -4px;
-    padding: 0 4px;
     transform: translateY(-50%);
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
-    background: white;
     color: #9b9b9b;
+    transition: all .25s ease-in-out;
+}
+
+.field__placeholder:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 47%;
+    left: -4px;
+    right: -4px;
+    z-index: -1;
+    height: 3px;
+    background: white;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
 }
 
 .field-focused .field__placeholder,
@@ -36,6 +47,11 @@
     top: 0;
     z-index: 1;
     font-size: 14px;
+}
+
+.field-focused .field__placeholder:before,
+.field:not(.field-empty) .field__placeholder:before {
+    opacity: 1;
 }
 
 .field__input {
@@ -48,7 +64,7 @@
 .field__icon {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 13px;
     transform: translateY(-50%);
 }
 

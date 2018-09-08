@@ -11,9 +11,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/react-fontawesome": "^0.1.2",
     "classnames": "^2.2.6",
+    "libphonenumber-js": "^1.4.5",
     "react": "^16.4.2",
     "react-credit-card-primitives": "^1.5.1",
     "react-dom": "^16.4.2",
+    "react-phone-number-input": "^2.2.3",
     "react-scripts": "1.1.5",
     "validator": "^10.7.1"
   },

@@ -4,6 +4,10 @@ import classNames from 'classnames'
 // Styles
 import './Field.css'
 
+// Images
+import dropdownIcon from '../../assets/images/dropdown.svg'
+import dropdownPinkIcon from '../../assets/images/dropdown-pink.svg'
+
 class CardMonth extends Component {
     state = {
         focused: false,
@@ -15,7 +19,6 @@ class CardMonth extends Component {
 
     handleBlur = () => {
         this.setState({focused: false})
-        this.handleChange()
     }
 
     handleChange = () => {
@@ -49,11 +52,18 @@ class CardMonth extends Component {
                         <option value={index} key={month}>{month}</option>
                     )}
                 </select>
+                <img src={dropdownIcon} className="field__icon" alt="" style={styles.icon}/>
                 {this.props.error ?
                     <div className="field__error">{this.props.error}</div>
                 : null}
             </div>
         )
+    }
+}
+
+const styles = {
+    icon: {
+        right: '19px'
     }
 }
 

@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import classNames from 'classnames'
-import validator from 'validator'
 
 // Styles
 import './Field.css'
 
 // Images
-import icon from '../../assets/images/input-checkmark.png'
+import dropdownIcon from '../../assets/images/dropdown.svg'
+import dropdownPinkIcon from '../../assets/images/dropdown-pink.svg'
 
 class Field extends Component {
     state = {
@@ -16,17 +16,9 @@ class Field extends Component {
     }
 
     validate = () => {
-        const minLength = this.props.minLength
         let error = ''
 
-        if (this.state.value) {
-            if (minLength && (this.state.value.length < minLength)) {
-                error = `Must be at least ${minLength} chars`
-            }
-            if (this.props.type === 'email' && !validator.isEmail(this.state.value)) {
-                error = 'Not a valid email'
-            }
-        } else if (this.props.required) {
+        if (this.props.required && !this.state.value) {
             error = 'This field is required'
         }
 
@@ -39,14 +31,13 @@ class Field extends Component {
 
     handleBlur = () => {
         this.setState({focused: false})
-        this.validate()
     }
 
     handleChange = event => {
         this.setState({
             value: event.target.value,
             error: ''
-        })
+        }, () => this.validate())
     }
 
     render() {
@@ -61,21 +52,28 @@ class Field extends Component {
                 {this.props.placeholder ?
                     <label className="field__placeholder">{this.props.placeholder}</label>
                 : null}
-                <input className="field__input"
-                       type={this.props.type}
+                <select className="field__input"
                        value={this.state.value}
                        onFocus={this.handleFocus}
                        onBlur={this.handleBlur}
                        onChange={this.handleChange}
-                />
-                {this.state.value && !this.state.focused && !this.state.error ?
-                    <img src={icon} className="field__icon" alt=""/>
-                : null}
+                >
+                    {this.props.options.map(option =>
+                        <option value={option} key={option}>{option}</option>
+                    )}
+                </select>
+                <img src={dropdownPinkIcon} className="field__icon" alt="" style={styles.icon}/>
                 {this.state.error ?
                     <div className="field__error">{this.state.error}</div>
                 : null}
             </div>
         )
+    }
+}
+
+const styles = {
+    icon: {
+        right: '19px'
     }
 }
 

@@ -4,6 +4,10 @@ import classNames from 'classnames'
 // Styles
 import './Field.css'
 
+// Images
+import dropdownIcon from '../../assets/images/dropdown.svg'
+import dropdownPinkIcon from '../../assets/images/dropdown-pink.svg'
+
 class CardYear extends Component {
     state = {
         focused: false,
@@ -50,11 +54,18 @@ class CardYear extends Component {
                         <option value={year} key={year}>{year}</option>
                     )}
                 </select>
+                <img src={dropdownIcon} className="field__icon" alt="" style={styles.icon}/>
                 {this.props.error ?
                     <div className="field__error">{this.props.error}</div>
                 : null}
             </div>
         )
+    }
+}
+
+const styles = {
+    icon: {
+        right: '19px'
     }
 }
 
